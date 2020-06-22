@@ -1,0 +1,27 @@
+DELIMITER //
+CREATE TRIGGER check_not_null_insert
+BEFORE INSERT ON products
+FOR EACH ROW
+BEGIN
+IF (NEW.name = NULL) AND (NEW.describtion = NULL) THEN
+SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'INSERT canceled';
+END IF;
+END//
+
+
+
+
+
+
+
+
+
+delimiter //
+CREATE TRIGGER check_not_null_update
+BEFORE UPDATE ON products
+FOR EACH ROW
+BEGIN
+IF (NEW.name = NULL) AND (NEW.describtion = NULL) THEN
+SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'UPDATE canceled';
+END IF;
+END//
