@@ -1,0 +1,30 @@
+root@Ubuntu-MySQL-VirtualBox:~# redis-cli
+127.0.0.1:6379> HSET emails email_ivan "iivanov@mail.ru"
+(integer) 1
+127.0.0.1:6379> HMSET emails email_artem "akovrov@yandex.ru" email_nastya "nperova@google.com" email_sergey                                                                             "sdronov@mail.ru"
+OK
+127.0.0.1:6379> HGETALL emails
+1) "email_ivan"
+2) "iivanov@mail.ru"
+3) "email_artem"
+4) "akovrov@yandex.ru"
+5) "email_nastya"
+6) "nperova@google.com"
+7) "email_sergey"
+8) "sdronov@mail.ru"
+127.0.0.1:6379> HGET emails email_sergey
+"sdronov@mail.ru"
+127.0.0.1:6379> HMSET users iivanov@mail.ru "email_ivan" akovrov@yandex.ru "email_artem" nperova@google.com "email_nastya" sdronov@mail.ru "email_sergey"
+OK
+127.0.0.1:6379> HGETALL users
+1) "iivanov@mail.ru"
+2) "email_ivan"
+3) "akovrov@yandex.ru"
+4) "email_artem"
+5) "nperova@google.com"
+6) "email_nastya"
+7) "sdronov@mail.ru"
+8) "email_sergey"
+127.0.0.1:6379> HGET users sdronov@mail.ru
+"email_sergey"
+127.0.0.1:6379>

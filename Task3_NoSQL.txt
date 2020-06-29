@@ -1,0 +1,271 @@
+Установка сервера MongoDB
+________________________________________________
+
+root@Ubuntu-MySQL-VirtualBox:~#
+root@Ubuntu-MySQL-VirtualBox:~# ps aux | grep mongod
+root      3669  0.0  0.0  21316   964 pts/18   S+   06:40   0:00 grep --color=auto mongod
+root@Ubuntu-MySQL-VirtualBox:~# mongo
+Программа 'mongo' на данный момент не установлена. Вы можете установить её, выполнив:
+apt install mongodb-clients
+root@Ubuntu-MySQL-VirtualBox:~# apt install mongodb-clients
+Чтение списков пакетов… Готово
+Построение дерева зависимостей
+Чтение информации о состоянии… Готово
+Следующие пакеты устанавливались автоматически и больше не требуются:
+  linux-headers-4.15.0-45 linux-headers-4.15.0-45-generic linux-image-4.15.0-45-generic linux-modules-4.15.0-45-generic linux-modules-extra-4.15.0-45-generic snapd-login-service
+Для их удаления используйте «sudo apt autoremove».
+Будут установлены следующие дополнительные пакеты:
+  libboost-program-options1.58.0 libboost-thread1.58.0 libgoogle-perftools4 libtcmalloc-minimal4 libv8-3.14.5 libyaml-cpp0.5v5
+Следующие НОВЫЕ пакеты будут установлены:
+  libboost-program-options1.58.0 libboost-thread1.58.0 libgoogle-perftools4 libtcmalloc-minimal4 libv8-3.14.5 libyaml-cpp0.5v5 mongodb-clients
+Обновлено 0 пакетов, установлено 7 новых пакетов, для удаления отмечено 0 пакетов, и 77 пакетов не обновлено.
+Необходимо скачать 50,4 MB архивов.
+После данной операции объём занятого дискового пространства возрастёт на 171 MB.
+Хотите продолжить? [Д/н] y
+Пол:1 http://ru.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libboost-program-options1.58.0 amd64 1.58.0+dfsg-5ubuntu3.1 [138 kB]
+Пол:2 http://ru.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libboost-thread1.58.0 amd64 1.58.0+dfsg-5ubuntu3.1 [47,0 kB]
+Пол:3 http://ru.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libtcmalloc-minimal4 amd64 2.4-0ubuntu5.16.04.1 [105 kB]
+Пол:4 http://ru.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libgoogle-perftools4 amd64 2.4-0ubuntu5.16.04.1 [187 kB]
+Пол:5 http://ru.archive.ubuntu.com/ubuntu xenial/universe amd64 libv8-3.14.5 amd64 3.14.5.8-5ubuntu2 [1 189 kB]
+Пол:6 http://ru.archive.ubuntu.com/ubuntu xenial-updates/universe amd64 libyaml-cpp0.5v5 amd64 0.5.2-4ubuntu1~16.04.4 [159 kB]
+Пол:7 http://ru.archive.ubuntu.com/ubuntu xenial/universe amd64 mongodb-clients amd64 1:2.6.10-0ubuntu1 [48,6 MB]
+Получено 50,4 MB за 4с (10,3 MB/s)
+Выбор ранее не выбранного пакета libboost-program-options1.58.0:amd64.
+(Чтение базы данных … на данный момент установлено 294225 файлов и каталогов.)
+Подготовка к распаковке …/libboost-program-options1.58.0_1.58.0+dfsg-5ubuntu3.1_amd64.deb …
+Распаковывается libboost-program-options1.58.0:amd64 (1.58.0+dfsg-5ubuntu3.1) …
+Выбор ранее не выбранного пакета libboost-thread1.58.0:amd64.
+Подготовка к распаковке …/libboost-thread1.58.0_1.58.0+dfsg-5ubuntu3.1_amd64.deb …
+Распаковывается libboost-thread1.58.0:amd64 (1.58.0+dfsg-5ubuntu3.1) …
+Выбор ранее не выбранного пакета libtcmalloc-minimal4.
+Подготовка к распаковке …/libtcmalloc-minimal4_2.4-0ubuntu5.16.04.1_amd64.deb …
+Распаковывается libtcmalloc-minimal4 (2.4-0ubuntu5.16.04.1) …
+Выбор ранее не выбранного пакета libgoogle-perftools4.
+Подготовка к распаковке …/libgoogle-perftools4_2.4-0ubuntu5.16.04.1_amd64.deb …
+Распаковывается libgoogle-perftools4 (2.4-0ubuntu5.16.04.1) …
+Выбор ранее не выбранного пакета libv8-3.14.5.
+Подготовка к распаковке …/libv8-3.14.5_3.14.5.8-5ubuntu2_amd64.deb …
+Распаковывается libv8-3.14.5 (3.14.5.8-5ubuntu2) …
+Выбор ранее не выбранного пакета libyaml-cpp0.5v5:amd64.
+Подготовка к распаковке …/libyaml-cpp0.5v5_0.5.2-4ubuntu1~16.04.4_amd64.deb …
+Распаковывается libyaml-cpp0.5v5:amd64 (0.5.2-4ubuntu1~16.04.4) …
+Выбор ранее не выбранного пакета mongodb-clients.
+Подготовка к распаковке …/mongodb-clients_1%3a2.6.10-0ubuntu1_amd64.deb …
+Распаковывается mongodb-clients (1:2.6.10-0ubuntu1) …
+Обрабатываются триггеры для libc-bin (2.23-0ubuntu11) …
+Обрабатываются триггеры для man-db (2.7.5-1) …
+Настраивается пакет libboost-program-options1.58.0:amd64 (1.58.0+dfsg-5ubuntu3.1) …
+Настраивается пакет libboost-thread1.58.0:amd64 (1.58.0+dfsg-5ubuntu3.1) …
+Настраивается пакет libtcmalloc-minimal4 (2.4-0ubuntu5.16.04.1) …
+Настраивается пакет libgoogle-perftools4 (2.4-0ubuntu5.16.04.1) …
+Настраивается пакет libv8-3.14.5 (3.14.5.8-5ubuntu2) …
+Настраивается пакет libyaml-cpp0.5v5:amd64 (0.5.2-4ubuntu1~16.04.4) …
+Настраивается пакет mongodb-clients (1:2.6.10-0ubuntu1) …
+Обрабатываются триггеры для libc-bin (2.23-0ubuntu11) …
+root@Ubuntu-MySQL-VirtualBox:~# mongo
+MongoDB shell version: 2.6.10
+connecting to: test
+2020-06-18T06:42:45.511+0300 warning: Failed to connect to 127.0.0.1:27017, reason: errno:111 Connection refused
+2020-06-18T06:42:45.520+0300 Error: couldn't connect to server 127.0.0.1:27017 (127.0.0.1), connection attempt failed at src/mongo/shell/mongo.js:146
+exception: connect failed
+root@Ubuntu-MySQL-VirtualBox:~# sudo systemctl start mongodb
+Failed to start mongodb.service: Unit mongodb.service not found.
+root@Ubuntu-MySQL-VirtualBox:~# sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
+Executing: /tmp/tmp.TfhHzvhBhG/gpg.1.sh --keyserver
+hkp://keyserver.ubuntu.com:80
+--recv
+EA312927
+gpg: запрашиваю ключ EA312927 с сервера hkp keyserver.ubuntu.com
+gpg: ключ EA312927: импортирован открытый ключ "Totally Legit Signing Key <mallory@example.org>"
+gpg: Всего обработано: 1
+gpg:               импортировано: 1  (RSA: 1)
+root@Ubuntu-MySQL-VirtualBox:~# echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
+deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse
+root@Ubuntu-MySQL-VirtualBox:~# sudo apt-get update
+Сущ:1 http://ppa.launchpad.net/linuxuprising/java/ubuntu xenial InRelease
+Сущ:2 http://ru.archive.ubuntu.com/ubuntu xenial InRelease
+Пол:3 http://ru.archive.ubuntu.com/ubuntu xenial-updates InRelease [109 kB]
+Сущ:4 http://security.ubuntu.com/ubuntu xenial-security InRelease
+Сущ:5 http://ppa.launchpad.net/webupd8team/java/ubuntu xenial InRelease
+Игн:6 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 InRelease
+Пол:7 http://ru.archive.ubuntu.com/ubuntu xenial-backports InRelease [107 kB]
+Пол:8 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 Release [3 462 B]
+Пол:9 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 Release.gpg [801 B]
+Сущ:10 https://dbeaver.io/debs/dbeaver-ce  InRelease
+Пол:11 http://ru.archive.ubuntu.com/ubuntu xenial-updates/main amd64 DEP-11 Metadata [326 kB]
+Пол:12 http://ru.archive.ubuntu.com/ubuntu xenial-updates/main DEP-11 64x64 Icons [246 kB]
+Пол:13 http://ru.archive.ubuntu.com/ubuntu xenial-updates/universe amd64 DEP-11 Metadata [276 kB]
+Пол:14 http://ru.archive.ubuntu.com/ubuntu xenial-updates/multiverse amd64 DEP-11 Metadata [5 964 B]
+Пол:15 http://ru.archive.ubuntu.com/ubuntu xenial-backports/main amd64 DEP-11 Metadata [3 328 B]
+Пол:16 http://ru.archive.ubuntu.com/ubuntu xenial-backports/universe amd64 DEP-11 Metadata [5 324 B]
+Игн:9 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 Release.gpg
+Пол:17 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2/multiverse amd64 Packages [11,2 kB]
+Получено 1 093 kB за 8с (136 kB/s)
+Чтение списков пакетов… Готово
+W: Ошибка GPG: http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 Release: Следующие подписи не могут быть проверены, так как недоступен открытый ключ: NO_PUBKEY D68FA50FEA3129       27
+W: Репозиторий «http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 Release» не подписан.
+N: Данные из этого репозитория не могут быть аутентифицированы, поэтому их использование потенциально небезопасно.
+N: Информацию о создании репозитория и настройках пользователя смотрите в справочной странице apt-secure(8).
+root@Ubuntu-MySQL-VirtualBox:~# sudo apt-get install -y mongodb-org
+Чтение списков пакетов… Готово
+Построение дерева зависимостей
+Чтение информации о состоянии… Готово
+Следующие пакеты устанавливались автоматически и больше не требуются:
+  libboost-program-options1.58.0 libboost-thread1.58.0 libgoogle-perftools4 libtcmalloc-minimal4 libv8-3.14.5 libyaml-cpp0.5v5 linux-headers-4.15.0-45
+  linux-headers-4.15.0-45-generic linux-image-4.15.0-45-generic linux-modules-4.15.0-45-generic linux-modules-extra-4.15.0-45-generic snapd-login-service
+Для их удаления используйте «sudo apt autoremove».
+Будут установлены следующие дополнительные пакеты:
+  mongodb-org-mongos mongodb-org-server mongodb-org-shell mongodb-org-tools
+Следующие пакеты будут УДАЛЕНЫ:
+  mongodb-clients
+Следующие НОВЫЕ пакеты будут установлены:
+  mongodb-org mongodb-org-mongos mongodb-org-server mongodb-org-shell mongodb-org-tools
+Обновлено 0 пакетов, установлено 5 новых пакетов, для удаления отмечено 1 пакетов, и 77 пакетов не обновлено.
+Необходимо скачать 51,8 MB архивов.
+После данной операции объём занятого дискового пространства возрастёт на 50,6 MB.
+ВНИМАНИЕ: Следующие пакеты невозможно аутентифицировать!
+  mongodb-org-shell mongodb-org-server mongodb-org-mongos mongodb-org-tools mongodb-org
+E: Обнаружены неаутентифицированные пакеты, и был указан параметр -y без --allow-unauthenticated
+root@Ubuntu-MySQL-VirtualBox:~# sudo apt-get install -y --allow-unauthenticated mongodb-org
+Чтение списков пакетов… Готово
+Построение дерева зависимостей
+Чтение информации о состоянии… Готово
+Следующие пакеты устанавливались автоматически и больше не требуются:
+  libboost-program-options1.58.0 libboost-thread1.58.0 libgoogle-perftools4 libtcmalloc-minimal4 libv8-3.14.5 libyaml-cpp0.5v5 linux-headers-4.15.0-45
+  linux-headers-4.15.0-45-generic linux-image-4.15.0-45-generic linux-modules-4.15.0-45-generic linux-modules-extra-4.15.0-45-generic snapd-login-service
+Для их удаления используйте «sudo apt autoremove».
+Будут установлены следующие дополнительные пакеты:
+  mongodb-org-mongos mongodb-org-server mongodb-org-shell mongodb-org-tools
+Следующие пакеты будут УДАЛЕНЫ:
+  mongodb-clients
+Следующие НОВЫЕ пакеты будут установлены:
+  mongodb-org mongodb-org-mongos mongodb-org-server mongodb-org-shell mongodb-org-tools
+Обновлено 0 пакетов, установлено 5 новых пакетов, для удаления отмечено 1 пакетов, и 77 пакетов не обновлено.
+Необходимо скачать 51,8 MB архивов.
+После данной операции объём занятого дискового пространства возрастёт на 50,6 MB.
+ВНИМАНИЕ: Следующие пакеты невозможно аутентифицировать!
+  mongodb-org-shell mongodb-org-server mongodb-org-mongos mongodb-org-tools mongodb-org
+Предупреждение об аутентификации не принято во внимание.
+Пол:1 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2/multiverse amd64 mongodb-org-shell amd64 3.2.22 [5 278 kB]
+Пол:2 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2/multiverse amd64 mongodb-org-server amd64 3.2.22 [10,0 MB]
+Пол:3 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2/multiverse amd64 mongodb-org-mongos amd64 3.2.22 [4 679 kB]
+Пол:4 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2/multiverse amd64 mongodb-org-tools amd64 3.2.22 [31,8 MB]
+Пол:5 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2/multiverse amd64 mongodb-org amd64 3.2.22 [3 564 B]
+Получено 51,8 MB за 7с (6 974 kB/s)
+(Чтение базы данных … на данный момент установлено 294300 файлов и каталогов.)
+Удаляется mongodb-clients (1:2.6.10-0ubuntu1) …
+Обрабатываются триггеры для man-db (2.7.5-1) …
+Выбор ранее не выбранного пакета mongodb-org-shell.
+(Чтение базы данных … на данный момент установлено 294272 файла и каталога.)
+Подготовка к распаковке …/mongodb-org-shell_3.2.22_amd64.deb …
+Распаковывается mongodb-org-shell (3.2.22) …
+Выбор ранее не выбранного пакета mongodb-org-server.
+Подготовка к распаковке …/mongodb-org-server_3.2.22_amd64.deb …
+Распаковывается mongodb-org-server (3.2.22) …
+Выбор ранее не выбранного пакета mongodb-org-mongos.
+Подготовка к распаковке …/mongodb-org-mongos_3.2.22_amd64.deb …
+Распаковывается mongodb-org-mongos (3.2.22) …
+Выбор ранее не выбранного пакета mongodb-org-tools.
+Подготовка к распаковке …/mongodb-org-tools_3.2.22_amd64.deb …
+Распаковывается mongodb-org-tools (3.2.22) …
+Выбор ранее не выбранного пакета mongodb-org.
+Подготовка к распаковке …/mongodb-org_3.2.22_amd64.deb …
+Распаковывается mongodb-org (3.2.22) …
+Обрабатываются триггеры для man-db (2.7.5-1) …
+Настраивается пакет mongodb-org-shell (3.2.22) …
+Настраивается пакет mongodb-org-server (3.2.22) …
+Добавляется системный пользователь «mongodb» (UID 124) ...
+Добавляется новый пользователь «mongodb» (UID 124) в группу «nogroup» ...
+Не создаётся домашний каталог «/home/mongodb».
+Добавляется группа «mongodb» (GID 131) ...
+Готово.
+Добавляется пользователь «mongodb» в группу «mongodb» ...
+Добавление пользователя mongodb в группу mongodb
+Готово.
+Настраивается пакет mongodb-org-mongos (3.2.22) …
+Настраивается пакет mongodb-org-tools (3.2.22) …
+Настраивается пакет mongodb-org (3.2.22) …
+root@Ubuntu-MySQL-VirtualBox:~# vi /etc/systemd/system/mongodb.service
+root@Ubuntu-MySQL-VirtualBox:~# sudo systemctl start mongodb
+Failed to start mongodb.service: Unit mongodb.service not found.
+root@Ubuntu-MySQL-VirtualBox:~# vi /etc/systemd/system/mongodb.service
+root@Ubuntu-MySQL-VirtualBox:~# sudo systemctl start mongodb
+root@Ubuntu-MySQL-VirtualBox:~# sudo systemctl status mongodb
+● mongodb.service - High-performance, schema-free document-oriented database
+   Loaded: loaded (/etc/systemd/system/mongodb.service; disabled; vendor preset: enabled)
+   Active: active (running) since Чт 2020-06-18 06:50:21 MSK; 6s ago
+ Main PID: 5708 (mongod)
+   CGroup: /system.slice/mongodb.service
+           └─5708 /usr/bin/mongod --quiet --config /etc/mongod.conf
+
+июн 18 06:50:21 Ubuntu-MySQL-VirtualBox systemd[1]: Started High-performance, schema-free document-oriented database.
+root@Ubuntu-MySQL-VirtualBox:~# mongo
+MongoDB shell version: 3.2.22
+connecting to: test
+Welcome to the MongoDB shell.
+For interactive help, type "help".
+For more comprehensive documentation, see
+        http://docs.mongodb.org/
+Questions? Try the support group
+        http://groups.google.com/group/mongodb-user
+> db.version()
+3.2.22
+__________________________________________________________________
+
+Выполнение заданя №3 по теме NoSQL
+
+__________________________________________________________________
+> show dbs
+local  0.000GB
+> use shop
+switched to db shop
+>
+> db.catalog.insert({name: "Процессоры"})
+WriteResult({ "nInserted" : 1 })
+> db.catalog.insert({name: "Материнские платы"})
+WriteResult({ "nInserted" : 1 })
+> db.catalog.insert({name: "Видеокарты"})
+WriteResult({ "nInserted" : 1 })
+
+> db.catalog.find()
+{ "_id" : ObjectId("5eeae7d1dc1fadc7d3f1ef34"), "name" : "Процессоры" }
+{ "_id" : ObjectId("5eeae7f0dc1fadc7d3f1ef35"), "name" : "Материнские платы" }
+{ "_id" : ObjectId("5eeae826dc1fadc7d3f1ef36"), "name" : "Видеокарты" }
+
+> db.products.insert({name: "Intel Core i3", description: "Процессор для настольного ПК", price: 7890.00, catalog_id: new ObjectId("5eeae7d1dc1fadc7d3f1ef34")})
+WriteResult({ "nInserted" : 1 })
+> db.products.insert({name: "Intel Core i5", description: "Процессор для настольного ПК", price: 12700.00, catalog_id: new ObjectId("5eeae7d1dc1fadc7d3f1ef34")})
+WriteResult({ "nInserted" : 1 })
+> db.products.insert({name: "AMD FX-8320E", description: "Процессор для настольного ПК, основанных на платформе AMD", price: 4780.00, catalog_id: new ObjectId("5eeae7d1dc1fadc7d3f1ef3       4")})
+WriteResult({ "nInserted" : 1 })
+> db.products.insert({name: "ASUS ROG MAXIMUS X HERO", description: "Материнская плата ASUS", price: 19310.00, catalog_id: new ObjectId("5eeae7f0dc1fadc7d3f1ef35")})
+WriteResult({ "nInserted" : 1 })
+> db.products.insert({name: "Gigabyte H310M S2H", description: "Материнская плата Gigabyte", price: 4790.00, catalog_id: new ObjectId("5eeae7f0dc1fadc7d3f1ef35")})
+WriteResult({ "nInserted" : 1 })
+> db.products.insert({name: "MSI B250M GAMING PRO", description: "Материнская плата MSI", price: 5060.00, catalog_id: new ObjectId("5eeae7f0dc1fadc7d3f1ef35")})
+WriteResult({ "nInserted" : 1 })
+
+> show dbs
+local  0.000GB
+shop   0.000GB
+{ "_id" : ObjectId("5eeaea26dc1fadc7d3f1ef37"), "name" : "Процессоры" }
+{ "_id" : ObjectId("5eeaeb28dc1fadc7d3f1ef38"), "name" : "Intel Core i3", "description" : "Процессор для настольного ПК", "price" : 7890, "catalog_id" : ObjectId("5eeae7d1dc1fadc7d3f1       ef34") }
+{ "_id" : ObjectId("5eeaeb60dc1fadc7d3f1ef39"), "name" : "Intel Core i5", "description" : "Процессор для настольного ПК", "price" : 12700, "catalog_id" : ObjectId("5eeae7d1dc1fadc7d3f       1ef34") }
+{ "_id" : ObjectId("5eeaebe5dc1fadc7d3f1ef3a"), "name" : "AMD FX-8320E", "description" : "Процессор для настольного ПК, основанных на платформе AMD", "price" : 4780, "catalog_id" : Ob       jectId("5eeae7d1dc1fadc7d3f1ef34") }
+{ "_id" : ObjectId("5eeaecd8dc1fadc7d3f1ef3b"), "name" : "ASUS ROG MAXIMUS X HERO", "description" : "Материнская плата ASUS", "price" : 19310, "catalog_id" : ObjectId("5eeae7f0dc1fadc       7d3f1ef35") }
+{ "_id" : ObjectId("5eeaed9fdc1fadc7d3f1ef3c"), "name" : "Gigabyte H310M S2H", "description" : "Материнская плата Gigabyte", "price" : 4790, "catalog_id" : ObjectId("5eeae7f0dc1fadc7d       3f1ef35") }
+{ "_id" : ObjectId("5eeaee01dc1fadc7d3f1ef3d"), "name" : "MSI B250M GAMING PRO", "description" : "Материнская плата MSI", "price" : 5060, "catalog_id" : ObjectId("5eeae7f0dc1fadc7d3f1       ef35") }
+> db.products.remove({name: "Процессоры"})
+WriteResult({ "nRemoved" : 1 })
+> db.products.find()
+{ "_id" : ObjectId("5eeaeb28dc1fadc7d3f1ef38"), "name" : "Intel Core i3", "description" : "Процессор для настольного ПК", "price" : 7890, "catalog_id" : ObjectId("5eeae7d1dc1fadc7d3f1       ef34") }
+{ "_id" : ObjectId("5eeaeb60dc1fadc7d3f1ef39"), "name" : "Intel Core i5", "description" : "Процессор для настольного ПК", "price" : 12700, "catalog_id" : ObjectId("5eeae7d1dc1fadc7d3f       1ef34") }
+{ "_id" : ObjectId("5eeaebe5dc1fadc7d3f1ef3a"), "name" : "AMD FX-8320E", "description" : "Процессор для настольного ПК, основанных на платформе AMD", "price" : 4780, "catalog_id" : Ob       jectId("5eeae7d1dc1fadc7d3f1ef34") }
+{ "_id" : ObjectId("5eeaecd8dc1fadc7d3f1ef3b"), "name" : "ASUS ROG MAXIMUS X HERO", "description" : "Материнская плата ASUS", "price" : 19310, "catalog_id" : ObjectId("5eeae7f0dc1fadc       7d3f1ef35") }
+{ "_id" : ObjectId("5eeaed9fdc1fadc7d3f1ef3c"), "name" : "Gigabyte H310M S2H", "description" : "Материнская плата Gigabyte", "price" : 4790, "catalog_id" : ObjectId("5eeae7f0dc1fadc7d       3f1ef35") }
+{ "_id" : ObjectId("5eeaee01dc1fadc7d3f1ef3d"), "name" : "MSI B250M GAMING PRO", "description" : "Материнская плата MSI", "price" : 5060, "catalog_id" : ObjectId("5eeae7f0dc1fadc7d3f1       ef35") }
+> db.catalog.find()
+{ "_id" : ObjectId("5eeae7d1dc1fadc7d3f1ef34"), "name" : "Процессоры" }
+{ "_id" : ObjectId("5eeae7f0dc1fadc7d3f1ef35"), "name" : "Материнские платы" }
+{ "_id" : ObjectId("5eeae826dc1fadc7d3f1ef36"), "name" : "Видеокарты" }
+>
